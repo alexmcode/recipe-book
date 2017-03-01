@@ -1,4 +1,35 @@
 # RecipeBook
+An online recipe book made in Angular2. The main purpose of this project is to test some features of Angular framework.
+
+# Things I've worked with in this project
+##### Directives
+- ngIf, ngFor, ngSwitch
+- custom attribute directives
+- custom structural directives
+- dependency injection
+
+##### Routing
+- query params
+- used child routes
+- used Guards CanActivate and CanDeactivate
+- authentication route protection
+
+##### Forms
+- template driven forms
+- data driven forms
+- validators, async validators, custom validators
+
+##### Pipes
+- custom pipes
+- pure pipes: reloads the view only when the value of a primitive changed or the reference to on object changed
+- impure pipes
+- async pipes
+
+##### Http and Observables
+- working with Firebase service to test Http service
+- error handling with observables
+- observables operators
+
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.25.5.
 
@@ -30,5 +61,3 @@ Run `ng github-pages:deploy` to deploy to GitHub Pages.
 
 To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 =======
-# recipe-book
-An online recipe book made in Angular2. The main purpose of this project is to test some features of Angular framework.
