@@ -53,17 +53,24 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
     let recipeIngredients: FormArray = new FormArray([]);
 
     if (!this.isNew) {
-      for (let i = 0; i < this.recipe.ingredients.length; i++) {
-        recipeIngredients.push(
-          new FormGroup({
-            name: new FormControl(this.recipe.ingredients[i].name, Validators.required),
-            amount: new FormControl(this.recipe.ingredients[i].amount, [
-              Validators.required,
-              Validators.pattern("\\d+")
-            ])
-          })
-        );
+
+      // We do this check because if we save into firebase a recipe without ingredients,
+      // when we retrieve the recipe it will not have ingredients property and
+      // the app will crash
+      if (this.recipe.hasOwnProperty('ingredients')) {
+        for (let i = 0; i < this.recipe.ingredients.length; i++) {
+          recipeIngredients.push(
+            new FormGroup({
+              name: new FormControl(this.recipe.ingredients[i].name, Validators.required),
+              amount: new FormControl(this.recipe.ingredients[i].amount, [
+                Validators.required,
+                Validators.pattern("\\d+")
+              ])
+            })
+          );
+        }
       }
+
       recipeName = this.recipe.name;
       recipeImageUrl = this.recipe.imagePath;
       recipeContent = this.recipe.description;

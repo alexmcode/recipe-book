@@ -19,6 +19,8 @@ import { RecipeStartComponent } from './recipes/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
 @NgModule({
+  // Add here component, directives, pipes you want to use in the app
+  // This mean that you don't have to add the 'directives:[]' in every class
   declarations: [
     AppComponent,
     HeaderComponent,
@@ -32,6 +34,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
     RecipeStartComponent,
     RecipeEditComponent
   ],
+  // Import finished modules/functionalities
   imports: [
     BrowserModule,
     FormsModule,
@@ -39,7 +42,11 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
     HttpModule,
     routing
   ],
+  // All the services that you want to inject after.
+  // Here are specified at root level so you can use them in the whole app.
+  // You can add this serction also in a class
   providers: [RecipeService, ShoppingListService],
+  // Specify the component that you want to bootstrap the app (start the app)
   bootstrap: [AppComponent]
 })
 export class AppModule { }
